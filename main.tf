@@ -235,9 +235,7 @@ resource "aws_iam_openid_connect_provider" "oidc_provider" {
   thumbprint_list = concat(data.tls_certificate.this[0].certificates[*].sha1_fingerprint, var.custom_oidc_thumbprints)
   url             = aws_eks_cluster.this[0].identity[0].oidc[0].issuer
 
-  tags = {
-    var.openid_connect_provider_tags
-  }
+  tags = var.openid_connect_provider_tags
 }
 
 ################################################################################
