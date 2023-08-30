@@ -352,6 +352,12 @@ variable "enable_irsa" {
   default     = true
 }
 
+variable "openid_connect_provider_tags" {
+  description = "A map of additional tags to add to the OpenID Connect (OIDC) provider created"
+  type        = map(string)
+  default     = {}
+}
+
 variable "openid_connect_audiences" {
   description = "List of OpenID Connect audience client IDs to add to the IRSA provider"
   type        = list(string)
